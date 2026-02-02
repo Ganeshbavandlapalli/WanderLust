@@ -1,0 +1,175 @@
+/* =========================
+   GLOBAL RESET & BASE
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* =========================
+   NAVBAR (global)
+   ========================= */
+
+.navbar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   PAGE CONTENT
+   ========================= */
+
+.page-content {
+  min-height: 80vh;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+/* =========================
+   LISTINGS (Index page)
+   ========================= */
+
+.list-group-item a {
+  font-size: 1.05rem;
+  color: #0d6efd;
+}
+
+.list-group-item a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   SHOW PAGE (Single listing)
+   ========================= */
+
+.card {
+  border-radius: 10px;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   FORMS (Create & Edit)
+   ========================= */
+
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.form-control {
+  border-radius: 6px;
+}
+
+button.btn {
+  font-weight: 500;
+}
+
+/* =========================
+   BUTTON CONSISTENCY
+   ========================= */
+
+.btn {
+  min-width: 110px;
+}
+
+/* =========================
+   FOOTER (if added later)
+   ========================= */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  color: #6c757d;
+}
+
+.fa-compass{
+    color:#fe424d;
+    font-size: 2rem;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+  background-color: #212529;
+  color: #dee2e6;
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: #adb5bd;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.social-icons a {
+  font-size: 1.3rem;
+  margin-right: 12px;
+  color: #adb5bd;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #adb5bd;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s ease;
+}

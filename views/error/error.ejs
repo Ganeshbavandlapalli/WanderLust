@@ -1,0 +1,29 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+  <div class="card shadow-lg border-0 text-center" style="max-width: 500px; width: 100%;">
+    
+    <div class="card-body p-5">
+      
+      <!-- Error Code -->
+     
+
+      <!-- Error Message -->
+      <h4 class="mb-3">
+        <%= message || "Something went wrong" %>
+      </h4>
+
+      
+
+      <!-- Buttons -->
+      <a href="/listings" class="btn btn-primary me-2">
+        Go to Listings
+      </a>
+
+      <a href="/" class="btn btn-outline-secondary">
+        Home
+      </a>
+
+    </div>
+  </div>
+</div>
