@@ -173,3 +173,18 @@ footer {
   transform: translateY(-3px);
   transition: 0.2s ease;
 }
+<<<<<<< HEAD
+=======
+
+.review-card {
+  border-radius: 12px;
+}
+
+.review-card h4 {
+  font-weight: 600;
+}
+
+.review-card textarea {
+  resize: none;
+}
+>>>>>>> a05c4fb (added review feature)

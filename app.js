@@ -3,6 +3,7 @@ app=express();
 app.set("viewengine","ejs")
 app.set(__dirname,"views")
 app.use(express.urlencoded({extended:true}))
+<<<<<<< HEAD
 const Listing = require("./models/listings.js");
 const method_override=require("method-override")
 app.use(method_override("_method"))
@@ -14,10 +15,27 @@ const joi=require("joi")
 
 app.use(express.static(path.join(__dirname,"public")))
 
+=======
+const method_override=require("method-override")
+app.use(method_override("_method"))
+const path=require("path")
+
+
+
+
+const joi=require("joi")
+app.use(express.static(path.join(__dirname,"public")))
+//ejs
+>>>>>>> a05c4fb (added review feature)
 const engine = require("ejs-mate");
 app.engine("ejs", engine);
 app.set("view engine", "ejs");
 
+<<<<<<< HEAD
+=======
+const listings=require("./routes/listings.js")
+const reviews=require("./routes/reviews.js")
+>>>>>>> a05c4fb (added review feature)
 const mongoose=require("mongoose");
 url="mongodb://127.0.0.1:27017/mydatabase";
 const connectDB=async()=>{
@@ -46,6 +64,7 @@ app.get("/",(req,res)=>{
      res.send("hello the server is running")
 })
 
+<<<<<<< HEAD
 app.get("/listings",async(req,res)=>{
     const data=await Listing.find({})
     res.render("listings/index.ejs",{data})
@@ -91,6 +110,11 @@ app.delete("/listings/:id",WrapAsync(async (req,res)=>{
     res.redirect("/listings")
 
 }))
+=======
+app.use("/listings",listings)
+app.use("/listings/:id/review",reviews)
+
+>>>>>>> a05c4fb (added review feature)
 
 app.use((req,res,next)=>{
     next(new ExpressError("PageNotfound",404))

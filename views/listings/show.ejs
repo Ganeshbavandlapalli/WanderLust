@@ -2,6 +2,7 @@
 
 <div class="row justify-content-center">
   <div class="col-md-8">
+<<<<<<< HEAD
 
     <div class="card shadow-sm">
       <div class="card-body">
@@ -9,6 +10,18 @@
         <h2 class="card-title mb-3">
           <%= hotel.title %>
         </h2>
+=======
+    <div class="card shadow-sm">
+      <div class="card-body">
+
+        <h2 class="card-title mb-3"><%= hotel.title %></h2>
+
+        <img
+          src="<%= hotel.image %>"
+          alt="hotel img"
+          class="img-fluid mb-3"
+        >
+>>>>>>> a05c4fb (added review feature)
 
         <p class="card-text">
           <strong>Description:</strong><br>
@@ -31,21 +44,132 @@
         </ul>
 
         <div class="d-flex gap-2">
+<<<<<<< HEAD
 
+=======
+>>>>>>> a05c4fb (added review feature)
           <a href="/listings/<%= hotel._id %>/edit" class="btn btn-warning">
             Edit
           </a>
 
           <form method="POST" action="/listings/<%= hotel._id %>?_method=DELETE">
+<<<<<<< HEAD
             <button class="btn btn-danger">
               Delete
             </button>
           </form>
 
+=======
+            <button class="btn btn-danger">Delete</button>
+          </form>
+>>>>>>> a05c4fb (added review feature)
         </div>
 
       </div>
     </div>
+<<<<<<< HEAD
 
   </div>
 </div>
+=======
+  </div>
+</div>
+
+<!-- Review Form -->
+<div class="row justify-content-center mt-4">
+  <div class="col-md-8">
+    <form
+      action="/listings/<%= hotel._id %>/review"
+      method="POST"
+      class="needs-validation"
+      novalidate
+    >
+
+      <div class="mb-3">
+        <label class="form-label">Rating</label>
+        <input
+          type="range"
+          class="form-range"
+          min="1"
+          max="5"
+          name="review[rating]"
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Comment</label>
+        <textarea
+          class="form-control"
+          rows="4"
+          name="review[comment]"
+          placeholder="Write your experience..."
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter feedback</div>
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-primary">Submit Review</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<hr>
+
+<!-- Reviews Section -->
+<div class="row mt-5 ">
+  <h4 class="mb-4">Reviews</h4>
+
+  <% if (!hotel.reviews || hotel.reviews.length === 0) { %>
+    <p class="text-muted">No reviews yet.</p>
+  <% } else { %>
+
+    <% hotel.reviews.forEach(review => { %>
+      <div class="col-md-6 mb-4">
+        <div class="d-flex gap-3">
+
+          <div
+            class="rounded-circle bg-dark text-white d-flex align-items-center justify-content-center"
+            style="width:48px; height:48px;"
+          >
+            R
+          </div>
+
+          <div>
+
+            <!-- Stars -->
+            <div class="small mb-1">
+              <% for (let i = 1; i <= 5; i++) { %>
+                <%= i <= review.rating ? "★" : "☆" %>
+              <% } %>
+            </div>
+
+            <!-- Comment (SAFE) -->
+            <% if (review.comment) { %>
+              <p class="review-text">
+                <%= review.comment %>
+              </p>
+
+              <% if (review.comment.length > 150) { %>
+                <a href="#" class="fw-semibold text-dark text-decoration-underline">
+                  Show more
+                </a>
+              <% } %>
+            <% } %>
+
+          </div>
+        </div>
+        <form method="post" action="/listings/<%=hotel._id%>/review/<%=review._id%>?_method=DELETE">
+       <button class="btn btn-danger">delete</button>
+      </form>
+      </div>
+      
+    <% }) %>
+
+  <% } %>
+  
+</div>
+>>>>>>> a05c4fb (added review feature)
